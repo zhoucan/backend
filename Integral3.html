@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页-农信后台管理系统</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="body-box">
+<!--头部-->
+<div class="header clearfix">
+	<div class="headbox">
+		<div class="user-inf">
+			<a href="login.html">退出</a>
+			<span class="xian">|</span>
+			<a href="javascript:;"><span class="user-icon"></span>超级用户</a>
+		</div>
+		<div class="logo clearfix">
+			<span class="logo-img"><img src="images/logo.png" alt="玉环农信logo"></span>
+			<span class="logo-name">农信积分<br/>后台管理系统</span>
+		</div>
+		<div class="nav">
+			<a href="index.html" class="nav-li"><span class="nav-home"></span>首页</a>
+			<a href="Integral3.html" class="nav-li current">积分兑换</a>
+			<a href="Stock.html" class="nav-li">库存管理</a>
+			<a href="javascript:;" class="nav-li">库存查询</a>
+			<a href="Set3.html" class="nav-li">设置</a>
+		</div>
+	</div>
+</div>
+<!--/头部-->
+<div class="wrap clearfix clr">
+<!--中间-->
+	<a class="side-handle SideHandle" title="关闭二级菜单"></a>
+	<!--左侧菜单-->
+	<div class="main-left treebox">
+		<div class="panel-heading"><i class="icon-cube"></i>积分兑换</div>
+		<div class="panel-body">
+			<ul>
+			<li class="panel-li"><a href="javascript:;">积分查询</a></li>
+			<li class="panel-li"><a href="Integral2.html">礼品发放</a></li>
+			<li class="panel-li current"><a href="Integral3.html">网点积分兑换历史</a></li>
+			<li class="panel-li"><a href="javascript:;">个人积分兑换历史</a></li>
+			<li class="panel-li"><a href="javascript:;">积分变化</a></li>
+			<li class="panel-li"><a href="javascript:;">存贷挂钩查询</a></li>
+			<li class="panel-li"><a href="javascript:;">积分调整</a></li>
+			<li class="panel-li"><a href="javascript:;">积分生成历史</a></li>
+			<li class="panel-li"><a href="javascript:;">对账查询</a></li>
+			<li class="panel-li"><a href="Integral10.html">对账冲正</a></li>
+			<li class="panel-li"><a href="javascript:;">积分消费记录统计</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	<!--/左侧菜单-->
+
+	<!--右侧框架-->
+	<div class="main-rightbox">
+		<div class="main-right">
+			<!--右侧框架内容-->
+			<!--位置-->
+			<div class="featurebar clearfix">
+				<div class="options">网点兑换历史</div>
+				<div class="actions">
+					<a href="javascript:;" class="btn"><i class="icon-count"></i>积分消费来源统计</a>
+					<a href="javascript:;" class="btn"><i class="icon-print"></i>兑换凭证批量打印</a>
+					<a href="javascript:;" class="btn"><i class="icon-ranking"></i>礼品兑换排名</a>
+					<a href="javascript:;" class="btn"><i class="icon-add"></i>新增</a>
+					<a href="javascript:;" class="btn"><i class="icon-export"></i>导出excel</a>
+				</div>
+			</div>
+			<!--/位置-->
+			
+			<!--搜索-->
+			<form method="post" action="javascript:;" class="form-condensed clearfix clr">
+				<div class="search-li">
+					<span class="search-title">请选择时间</span><input type="text" class="input-control searchInput" id="datepicker" style="width: 90px;"> - <input type="text" class="input-control searchInput" style="width: 90px;">
+				</div>
+				<div class="search-li">
+					<span class="search-title">网点</span>
+					<select class="searchSelect">
+					    <option value="000000">全部</option>
+					    <option value="10001">A支行</option>
+					    <option value="10002">B支行</option>
+					    <option value="10004">D支行</option>
+					    <option value="970000">杭州下沙总行</option>
+					    <option value="960000">滨江支行666</option>
+					    <option value="969999">测试支行</option>
+					</select>
+				</div>
+				<div class="search-li">
+					<button type="submit" class="btn-submit" id="btn-submit-ie6"><span class="icon-search"></span>搜索</button>
+				</div>
+				<!--搜索右侧展开关闭-->
+				<div class="moreOrLite noselect">
+				  <i class="searchmore icon-search-open"></i>
+				  <i class="searchlite icon-search-close"></i>
+				</div>
+				<!--/搜索右侧展开关闭-->
+			</form>
+			<!--/搜索-->
+			
+			<!--数据内容box-->
+			<div class="data-box clearfix clr">
+			<div class="data-table-scroll ExchangeHistoryTable">
+			<!--/*ExchangeHistoryTable样式 为控制table的单元格宽度-程序看着按需设置*/-->	
+				<div class="table-head">
+					<table class="data-table clearfix clr">
+				        <thead>
+				           <tr>
+								<th class="scroll_t0"><span class="text-left pl5">单号</span></th>
+								<th class="scroll_t1">日期</th>
+								<th class="scroll_t2">单位</th>
+								<th class="scroll_t3">客户内码</th>
+								<th class="scroll_t4">消费积分</th>
+								<th class="scroll_t5">剩余积分</th>
+								<th class="scroll_t6">状态</th>
+								<th class="scroll_t7">来源</th>
+								<th class="scroll_t8">处理状态</th>
+								<th class="scroll_t9">出库单</th>
+							</tr>
+				        </thead>
+				    </table>
+			   </div>
+				<div class="table-scroll">
+				    <table class="data-table clearfix clr">
+			            <tbody>
+			                <tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6"><span class="col-green">正常兑换</span></td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8"><span class="col-red">待处理</span></td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							
+							
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="scroll_t0"><span class="text-left pl5"><a href="javascript:;">2742942901450196</a></span></td>
+								<td class="scroll_t1">2016-08-01</td>
+								<td class="scroll_t2">1232</td>
+								<td class="scroll_t3">81000001220</td>
+								<td class="scroll_t4">1.00</td>
+								<td class="scroll_t5">186446.00</td>
+								<td class="scroll_t6">取消</td>
+								<td class="scroll_t7">POS</td>
+								<td class="scroll_t8">-</td>
+								<td class="scroll_t9">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+			            </tbody>
+			        </table>
+			    </div>
+			</div>
+
+			<div class="datatable-footer clearfix clr">
+					<div class="dataTables_info">总计 <span class="strong">13344</span> 条，<span class="col-666">当前显示 <span class="strong">1-10</span> 条</div>
+					<div class="dataTables_paginate">
+							<a class="first paginate_button paginate_button_disabled">第一页</a>
+							<a class="previous paginate_button paginate_button_disabled">&lt;</a>
+							<a class="paginate_active">1</a>
+							<a class="paginate_button">2</a>
+							<a class="paginate_button">3</a>
+							<a class="next paginate_button">&gt;</a>
+							<a class="last paginate_button">最后一页</a>
+						</div>
+					</div>
+			</div>
+			<!--/数据内容box-->
+			
+			<!--/右侧框架内容-->
+		</div>
+	</div>
+	<!--/右侧框架-->
+
+<!--/中间-->
+</div>
+<!--底部-->
+<div class="footer clearfix clr">
+	<div class="footbox">
+	<div class="crumbs"><a href="index.html">首页</a> &gt; <a href="javascript:;">积分兑换</a> &gt; <span class="current">网点兑换历史</span></div>
+	<div class="copyright"><em>&copy; </em>杭州九州方园科技有限公司<span class="xian">|</span><a href="javascript:;">联系管理员</a><span class="xian">|</span><a href="javascript:;">报告Bug</a></div>
+	</div>
+</div>
+<!--/底部-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/base.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		//设置日期选择
+		 $( "#datepicker" ).datepicker();
+	})
+	
+	//设置table内容滚动，并设置单元格宽度
+	var o = new Array('200','100','90','100','120','120','80','90','100','150');
+	DataTableScroll('.ExchangeHistoryTable',o);
+
+</script>
+</body>
+</html>

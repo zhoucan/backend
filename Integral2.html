@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>礼品发放-积分兑换</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="body-box">
+<!--头部-->
+<div class="header clearfix">
+	<div class="headbox">
+		<div class="user-inf">
+			<a href="login.html">退出</a>
+			<span class="xian">|</span>
+			<a href="javascript:;"><span class="user-icon"></span>超级用户</a>
+		</div>
+		<div class="logo clearfix">
+			<span class="logo-img"><img src="images/logo.png" alt="玉环农信logo"></span>
+			<span class="logo-name">农信积分<br/>后台管理系统</span>
+		</div>
+		<div class="nav">
+			<a href="index.html" class="nav-li"><span class="nav-home"></span>首页</a>
+			<a href="Integral3.html" class="nav-li current">积分兑换</a>
+			<a href="Stock.html" class="nav-li">库存管理</a>
+			<a href="javascript:;" class="nav-li">库存查询</a>
+			<a href="Set3.html" class="nav-li">设置</a>
+		</div>
+	</div>
+</div>
+<!--/头部-->
+<div class="wrap clearfix clr">
+<!--中间-->
+	<a class="side-handle SideHandle" title="关闭二级菜单"></a>
+	<!--左侧菜单-->
+	<div class="main-left treebox">
+		<div class="panel-heading"><i class="icon-cube"></i>积分兑换</div>
+		<div class="panel-body">
+			<ul>
+			<li class="panel-li"><a href="javascript:;">积分查询</a></li>
+			<li class="panel-li current"><a href="Integral2.html">礼品发放</a></li>
+			<li class="panel-li"><a href="Integral3.html">网点积分兑换历史</a></li>
+			<li class="panel-li"><a href="javascript:;">个人积分兑换历史</a></li>
+			<li class="panel-li"><a href="javascript:;">积分变化</a></li>
+			<li class="panel-li"><a href="javascript:;">存贷挂钩查询</a></li>
+			<li class="panel-li"><a href="javascript:;">积分调整</a></li>
+			<li class="panel-li"><a href="javascript:;">积分生成历史</a></li>
+			<li class="panel-li"><a href="javascript:;">对账查询</a></li>
+			<li class="panel-li"><a href="Integral10.html">对账冲正</a></li>
+			<li class="panel-li"><a href="javascript:;">积分消费记录统计</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	<!--/左侧菜单-->
+
+	<!--右侧框架-->
+	<div class="main-rightbox">
+		<div class="main-right">
+			<!--右侧框架内容-->
+			<!--位置-->
+			<div class="featurebar clearfix">
+				<div class="options">礼品发放</div>
+			</div>
+			<!--/位置-->
+			
+			<!--搜索-->
+			<div class="gift-issue-box">
+				<div class="search-li">
+					<span class="search-title">请输入单号查询</span><input type="text" class="input-control searchInput" style="width: 220px;">
+					<button type="submit" class="btn-submit" id="btn-submit-ie6"><span class="icon-search"></span>查询兑换单</button>
+				</div>
+				<div class="search-tips clearfix clr">
+					<span class="search-tips-text">不存在该发放单号</span>
+				</div>
+				<!--搜索右侧展开关闭-->
+				<div class="moreOrLite noselect">
+				  <i class="searchmore icon-search-open"></i>
+				  <i class="searchlite icon-search-close"></i>
+				</div>
+				<!--/搜索右侧展开关闭-->
+			</div>
+			<!--/搜索-->
+			
+			<!--查询结果-->
+			<div class="gift-result-box">
+				<div class="tableGroup-result clearfix">
+					<span class="tableGroupT">&gt; 查询结果</span>
+				</div>
+				<div class="tableGroup-result2 clearfix">
+					<span class="tableGroupT">兑换单号：20161205000990418  <span class="plr30">兑换人：申太良(510921********0416)</span>兑换状态：已取消</span>
+				</div>
+				<table class="data-table clearfix clr">
+					<thead>
+						<tr class="tr_odd">
+						    <th><span class="pl5 text-left">兑换编号</span></th>
+			                <th><span class="text-left">礼品</span></th>
+			                <th>积分</th>
+			                <th>数量</th>
+			                <th>小计</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="pl5 text-left">000011</span></td>
+							<td><span class="text-left">太太乐鸡精</span></td>
+							<td>750</td>
+							<td>2</td>
+							<td>2250.00</td>
+						</tr>
+						<tr>
+							<td><span class="pl5 text-left">000015</span></td>
+							<td><span class="text-left">厚绒手套</span></td>
+							<td>1480</td>
+							<td>1</td>
+							<td>2250.00</td>
+						</tr>
+						<tr>
+							<td><span class="pl5 text-left">000016</span></td>
+							<td><span class="text-left">lalala</span></td>
+							<td>12</td>
+							<td>1</td>
+							<td>12.00</td>
+						</tr>
+						<tr>
+							<td><span class="pl5 text-left">000016</span></td>
+							<td><span class="text-left">lalala</span></td>
+							<td>12</td>
+							<td>1</td>
+							<td>12.00</td>
+						</tr>
+						<tr>
+							<td colspan="5">
+								<span class="text-right pr25 strong">总计：
+									<span class="col-red">5</span> 件礼品&nbsp;&frasl;&nbsp;
+									<span class="col-red">3742</span> 积分
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!--底部按钮-->
+				<div class="button-box">
+					<button type="submit" class="btn-submit btn-hui">返回</button>
+					<button type="submit" class="btn-submit">打印</button>
+					<button type="submit" class="btn-submit btn-lv">发放</button>
+					<button type="submit" class="btn-submit btn-cheng">取消单据</button>
+				</div>
+				<!--/底部按钮-->
+			</div>
+			<!--/查询结果-->
+			
+			<!--/右侧框架内容-->
+		</div>
+	</div>
+	<!--/右侧框架-->
+
+<!--/中间-->
+</div>
+<!--底部-->
+<div class="footer clearfix clr">
+	<div class="footbox">
+	<div class="crumbs"><a href="index.html">首页</a> &gt; <a href="javascript:;">积分兑换</a> &gt; <span class="current">网点兑换历史</span></div>
+	<div class="copyright"><em>&copy; </em>杭州九州方园科技有限公司<span class="xian">|</span><a href="javascript:;">联系管理员</a><span class="xian">|</span><a href="javascript:;">报告Bug</a></div>
+	</div>
+</div>
+<!--/底部-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/base.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		
+	})
+</script>
+</body>
+</html>

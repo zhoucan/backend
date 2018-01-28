@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎登陆玉环农信积分后台管理系统</title>
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="loginbox">
+	<div class="logo">
+		<span class="logo_img"><img src="images/login/alogin_logo.gif" alt="玉环农信logo"></span>
+		<span class="logo_name">
+			<span class="cn"><em>玉环</em>农信</span>
+			<span class="en">YUHUAN INTEGRAL</span>
+		</span>
+		<span class="login_links">
+			<a href="javascript:;">联系管理员</a>
+			<a href="javascript:;">提交BUG</a>
+		</span>
+	</div>
+	
+	<div class="login_content">
+		<div class="login_title">欢迎登陆积分后台管理系统</div>
+		<div class="login_error" style="display: none;">用户名或密码错误</div>
+		<div class="field username-field">
+			<input type="input" name="username" class="login-text" value="">
+			<label for="username"><i class="user_icon" title="会员名"></i></label>
+			<span class="ph-label">请输入用户名</span>
+		</div>
+		<div class="field pwd-field">
+			<input type="password" name="pwd" class="login-text" value="">
+			<label for="pwd"><i class="pwd_icon" title="会员名"></i></label>
+			<span class="ph-label">请输入密码</span>
+		</div>
+		<button type="submit" class="J_Submit" onclick="window.location.href='index.html'">登 录</button>
+		<div class="copyright"><em>&copy;</em> 浙江九州方圆科技有限公司</div>
+	</div>
+</div>
+
+<script src="js/jquery.min.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		//初始化input（默认记住密码情况）
+		$(".login-text").each(function(){ textinput(this); });
+		//input值改变事件
+		$(".login-text").on("propertychange input", function(){ textinput(this); });
+		$(".login-text").on("keyup", function(){ textinput(this); });
+		$(".login-text").change(function(){ textinput(this); });		
+		//input值改变事件调用js方法
+		function textinput(obj){
+			var textvalue = $(obj).val();
+			if(textvalue == ''){
+				$(obj).siblings('.ph-label').show();
+			}else{
+				$(obj).siblings('.ph-label').hide();
+			}
+		}
+		//针对IE6层级定位问题
+		$('.ph-label').click(function(){
+			$(this).siblings('.login-text').focus();
+		});
+		
+	})
+</script>
+</body>
+</html>

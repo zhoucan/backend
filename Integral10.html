@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>对账冲正-积分兑换</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="body-box">
+<!--头部-->
+<div class="header clearfix">
+	<div class="headbox">
+		<div class="user-inf">
+			<a href="login.html">退出</a>
+			<span class="xian">|</span>
+			<a href="javascript:;"><span class="user-icon"></span>超级用户</a>
+		</div>
+		<div class="logo clearfix">
+			<span class="logo-img"><img src="images/logo.png" alt="玉环农信logo"></span>
+			<span class="logo-name">农信积分<br/>后台管理系统</span>
+		</div>
+		<div class="nav">
+			<a href="index.html" class="nav-li"><span class="nav-home"></span>首页</a>
+			<a href="Integral3.html" class="nav-li current">积分兑换</a>
+			<a href="Stock.html" class="nav-li">库存管理</a>
+			<a href="javascript:;" class="nav-li">库存查询</a>
+			<a href="Set3.html" class="nav-li">设置</a>
+		</div>
+	</div>
+</div>
+<!--/头部-->
+<div class="wrap clearfix clr">
+<!--中间-->
+	<a class="side-handle SideHandle" title="关闭二级菜单"></a>
+	<!--左侧菜单-->
+	<div class="main-left treebox">
+		<div class="panel-heading"><i class="icon-cube"></i>积分兑换</div>
+		<div class="panel-body">
+			<ul>
+			<li class="panel-li"><a href="javascript:;">积分查询</a></li>
+			<li class="panel-li"><a href="Integral2.html">礼品发放</a></li>
+			<li class="panel-li"><a href="Integral3.html">网点积分兑换历史</a></li>
+			<li class="panel-li"><a href="javascript:;">个人积分兑换历史</a></li>
+			<li class="panel-li"><a href="javascript:;">积分变化</a></li>
+			<li class="panel-li"><a href="javascript:;">存贷挂钩查询</a></li>
+			<li class="panel-li"><a href="javascript:;">积分调整</a></li>
+			<li class="panel-li"><a href="javascript:;">积分生成历史</a></li>
+			<li class="panel-li"><a href="javascript:;">对账查询</a></li>
+			<li class="panel-li current"><a href="Integral10.html">对账冲正</a></li>
+			<li class="panel-li"><a href="javascript:;">积分消费记录统计</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	<!--/左侧菜单-->
+
+	<!--右侧框架-->
+	<div class="main-rightbox">
+		<div class="main-right">
+			<!--右侧框架内容-->
+			<!--位置-->
+			<div class="featurebar clearfix">
+				<div class="options">对账冲正</div>
+			</div>
+			<!--/位置-->
+			
+			<!--搜索-->
+			<div class="form-Submit-info">
+				<div class="search-li">
+					<span class="search-title">订单流水号</span><input type="text" class="input-control searchInput" style="width: 220px;">
+					<button type="submit" class="btn-submit" id="btn-submit-ie6"><span class="icon-search"></span>查询</button>
+				</div>
+				<div class="accounts-tips clearfix clr">
+					<span class="search-tips-text">
+						该订单流水号不存在!<br/>
+						省联社平台的流水号和我行社的订单流水号可能不一致。<br/>
+						1.可以先在“积分调整”里面输入身份证查询该客户的内码。<br/>
+						2.然后在“积分变化”里面“来源”选择“PAYM”,输入客户内码查询出对应积分的订单流水号。<br/>
+						3.找到对应订单流水号，再到这里查询、冲正。
+					</span>
+				</div>
+				
+			</div>
+			<!--/搜索-->
+			
+			<!--对账冲正说明-->
+			<div class="recall-tips">说明：“对账冲正”是针对省联社支付网关的形成的订单进行撤销，由于网络等原因需要对某些订单进行撤销（冲正），将积分返还给客户。</div>
+			<!--/对账冲正说明-->
+			
+			<!--搜索结果-->
+			<div class="search-result">
+				<div class="text-info">
+					<span class="text-title">查询结果</span>
+					<ul class="text-content clearfix clr">
+						<li class="text-li clearfix clr">
+							<span class="text-name">订单流水号</span>
+							<span class="text-result col-red strong">98723988472987</span>
+						</li>
+						<li class="text-li clearfix clr">
+							<span class="text-name">客户姓名</span>
+							<span class="text-result">张三</span>
+						</li>
+						<li class="text-li clearfix clr">
+							<span class="text-name">客户证件号</span>
+							<span class="text-result">837479</span>
+						</li>
+						<li class="text-li clearfix clr">
+							<span class="text-name">消费日期</span>
+							<span class="text-result">2016-02-12</span>
+						</li>
+						<li class="text-li clearfix clr">
+							<span class="text-name">消费积分</span>
+							<span class="text-result">23.0</span>
+						</li>
+						<li class="text-li clearfix clr">
+							<span class="text-name">当前状态</span>
+							<span class="text-result"><input type="text" class="input-control searchInput"></span>
+						</li>
+					</ul>
+					<div class="text-button">
+						<span class="text-name">&nbsp;</span>
+						<button type="submit" class="btn-submit"><span class="icon-recall"></span>冲正</button>
+						<button type="submit" class="btn-submit btn-lv">确认调整</button>
+						<button type="submit" class="btn-submit btn-cheng">积分清零</button>
+					</div>
+				</div>
+			</div>
+			<!--/搜索结果-->
+			
+			<!--/右侧框架内容-->
+		</div>
+	</div>
+	<!--/右侧框架-->
+
+<!--/中间-->
+</div>
+<!--底部-->
+<div class="footer clearfix clr">
+	<div class="footbox">
+	<div class="crumbs"><a href="index.html">首页</a> &gt; <a href="javascript:;">积分兑换</a> &gt; <span class="current">网点兑换历史</span></div>
+	<div class="copyright"><em>&copy; </em>杭州九州方园科技有限公司<span class="xian">|</span><a href="javascript:;">联系管理员</a><span class="xian">|</span><a href="javascript:;">报告Bug</a></div>
+	</div>
+</div>
+<!--/底部-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/base.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		
+	})
+</script>
+</body>
+</html>
